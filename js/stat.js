@@ -17,7 +17,7 @@ var drawCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] > maxElement) {
@@ -35,7 +35,6 @@ var drawColumn = function (ctx, name, ms, index, maxTime) {
   var scoreY = columnY - OFFSET;
   var score = Math.round(ms);
   var opacity = +Math.random().toFixed(2);
-  
   ctx.fillStyle = '#000';
   ctx.fillText(name, columnX, nameY);
   ctx.fillText(score, columnX, scoreY);
@@ -46,15 +45,13 @@ var drawColumn = function (ctx, name, ms, index, maxTime) {
   ctx.fillRect(columnX, columnY, COLUMN_WIDTH, heightColumn);
 };
 
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   var maxTime = getMaxElement(times);
-  
   drawCloud(ctx, CLOUD_X + OFFSET, CLOUD_Y + OFFSET, 'rgba(0, 0, 0, 0.7)');
   drawCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
   ctx.fillStyle = '#000';
   ctx.fillText('Ура вы победили!', TEXT_X, CLOUD_Y + OFFSET + TEXT_HEIGHT);
   ctx.fillText('Список результатов:', TEXT_X, CLOUD_Y + OFFSET + TEXT_HEIGHT * 2);
-
   for (var i = 0; i < names.length; i++) {
     drawColumn(ctx, names[i], times[i], i, maxTime);
   }
