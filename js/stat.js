@@ -38,7 +38,7 @@ var drawColumn = function (ctx, name, ms, index, maxTime) {
   ctx.fillStyle = '#000';
   ctx.fillText(name, columnX, nameY);
   ctx.fillText(score, columnX, scoreY);
-  ctx.fillStyle = 'rgba(0, 0, 255, ' + opacity +')';
+  ctx.fillStyle = 'rgba(0, 0, 255, ' + opacity + ')';
   if (name === 'Вы') {
     ctx.fillStyle = 'rgba(255, 0, 0, 1)';
   }
