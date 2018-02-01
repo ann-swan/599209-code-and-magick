@@ -19,7 +19,7 @@ var usedLastnames = [];
 var usedCoatColors = [];
 var usedEyesColors = [];
 
-var createWizardsArray = function (wizards) {
+var createWizardsArray = function (wizardsArray) {
   for (var i = 0; i < WIZARD_COUNT; i++) {
     var wizardName = getUniqueArrayElement(wizardNames, usedNames);
     var wizardLastname = getUniqueArrayElement(wizardLastnames, usedLastnames);
@@ -30,9 +30,9 @@ var createWizardsArray = function (wizards) {
       coatColor: wizardCoatColor,
       eyesColor: wizardEyesColor
     };
-    wizards.push(wizardObject);
+    wizardsArray.push(wizardObject);
   }
-  return wizards;
+  return wizardsArray;
 };
 
 var randomInteger = function (min, max) {
@@ -42,7 +42,7 @@ var randomInteger = function (min, max) {
 };
 
 var contains = function (array, elem) {
-   return array.indexOf(elem) != -1;
+  return array.indexOf(elem) !== -1;
 };
 
 var getUniqueArrayElement = function (array, usedElementsArr) {
@@ -66,7 +66,7 @@ var fillWizardListElement = function (array, listElement) {
   var fragment = document.createDocumentFragment();
   for (var i = 0; i < array.length; i++) {
     fragment.appendChild(createWizardElement(array[i]));
-  };
+  }
   listElement.appendChild(fragment);
 };
 
