@@ -16,19 +16,15 @@ var WIZARD_EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var wizards = [];
 
 var createWizardsList = function (wizardsCount) {
-  var wizards = [];
+  var wizardsList = [];
   var wizardNameList = shuffleList(WIZARD_NAMES);
   var wizardLastnameList = shuffleList(WIZARD_LASTNAMES);
   var wizardCoatColorList = shuffleList(WIZARD_COAT_COLORS);
   var wizardEyesColorList = shuffleList(WIZARD_EYES_COLORS);
   for (var i = 0; i < wizardsCount; i++) {
-    wizards.push({ name: wizardNameList[i] + ' ' + wizardLastnameList[i], coatColor: wizardCoatColorList[i], eyesColor: wizardEyesColorList[i]});
+    wizardsList.push({name: wizardNameList[i] + ' ' + wizardLastnameList[i], coatColor: wizardCoatColorList[i], eyesColor: wizardEyesColorList[i]});
   }
-  return wizards;
-};
-
-var getRandomBetween = function (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return wizardsList;
 };
 
 var shuffleList = function (list) {
@@ -49,7 +45,7 @@ var createWizardElement = function (wizard) {
 
 var fillWizardListElement = function (list, listElement) {
   var fragment = document.createDocumentFragment();
-  list.forEach(function (item, i, arr) {
+  list.forEach(function (item, i) {
     fragment.appendChild(createWizardElement(list[i]));
   });
   listElement.innerHTML = '';
