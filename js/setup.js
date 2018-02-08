@@ -9,9 +9,9 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
 var setupUserNameElement = setupElement.querySelector('.setup-user-name');
 var similarItemElement = similarWizardTemplate.querySelector('.setup-similar-item');
 var setupWizardElement = setupElement.querySelector('.setup-wizard');
-var setupWizardCoatElement = setupWizardElement.querySelector('.wizard-coat'); 
-var setupWizardEyesElement = setupWizardElement.querySelector('.wizard-eyes'); 
-var setupWizardFireballElement = setupElement.querySelector('.setup-fireball-wrap'); 
+var setupWizardCoatElement = setupWizardElement.querySelector('.wizard-coat');
+var setupWizardEyesElement = setupWizardElement.querySelector('.wizard-eyes');
+var setupWizardFireballElement = setupElement.querySelector('.setup-fireball-wrap');
 
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
@@ -110,14 +110,14 @@ setupCloseElement.addEventListener('keydown', function (evt) {
 });
 
 setupWizardCoatElement.addEventListener('click', function () {
-  this.style.fill = getRandomArrayElement(WIZARD_COAT_COLORS);
+  setupWizardCoatElement.style.fill = getRandomArrayElement(WIZARD_COAT_COLORS);
 });
 
 setupWizardEyesElement.addEventListener('click', function () {
-  this.style.fill = getRandomArrayElement(WIZARD_EYES_COLORS);
+  setupWizardEyesElement.style.fill = getRandomArrayElement(WIZARD_EYES_COLORS);
 });
 
 setupWizardFireballElement.addEventListener('click', function () {
-  this.style.background = getRandomArrayElement(WIZARD_FIREBALL_COLORS);
+  setupWizardFireballElement.style.background = getRandomArrayElement(WIZARD_FIREBALL_COLORS);
 });
 
